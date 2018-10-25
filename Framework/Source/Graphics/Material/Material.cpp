@@ -208,7 +208,8 @@ namespace Falcor
         uint32_t normalMode = NormalMapUnused;
         if (pNormalMap)
         {
-            switch(getFormatChannelCount(pNormalMap->getFormat()))
+			auto fmt = getFormatChannelCount(pNormalMap->getFormat());
+            switch(fmt)
             {
             case 2:
                 normalMode = NormalMapRG;

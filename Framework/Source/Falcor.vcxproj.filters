@@ -538,6 +538,12 @@
     <ClCompile Include="Utils\VariablesBufferUI.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="..\Externals\fmt\src\format.cc">
+      <Filter>Externals\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externals\fmt\src\posix.cc">
+      <Filter>Externals\fmt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\Model\Animation.h">
@@ -1886,6 +1892,9 @@
     </Filter>
     <Filter Include="Effects\FXAA">
       <UniqueIdentifier>{51b693f1-34da-4d5e-a6d5-925944c92c79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externals\fmt">
+      <UniqueIdentifier>{51da8764-6282-4c1f-9feb-81e87adc3124}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

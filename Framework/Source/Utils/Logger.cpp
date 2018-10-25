@@ -40,7 +40,7 @@ namespace Falcor
 
     bool Logger::sInit = false;
     FILE* Logger::sLogFile = nullptr;
-    Logger::Level Logger::sVerbosity = Logger::Level::Warning;
+    Logger::Level Logger::sVerbosity = Logger::Level::Message;
 
     static FILE* openLogFile()
     {
@@ -97,7 +97,8 @@ namespace Falcor
 #define create_level_case(_l) case _l: c = "(" #_l ")" ;break;
         switch(L)
         {
-            create_level_case(Logger::Level::Info);
+			create_level_case(Logger::Level::Info);
+			create_level_case(Logger::Level::Message);
             create_level_case(Logger::Level::Warning);
             create_level_case(Logger::Level::Error);
         default:

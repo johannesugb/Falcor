@@ -43,8 +43,9 @@ namespace Falcor
         enum class Level
         {
             Info = 0,       ///< Informative messages
-            Warning = 1,    ///< Warning messages
-            Error = 2,      ///< Error messages. Application might be able to continue running, but incorrectly.
+			Message = 1,	///< "Important information" messages 
+            Warning = 2,    ///< Warning messages
+            Error = 3,      ///< Error messages. Application might be able to continue running, but incorrectly.
 
             Disabled = -1
         };
@@ -76,7 +77,8 @@ namespace Falcor
         static void setVerbosity(Level level) { sVerbosity = level; }
 
     private:
-        friend void logInfo(const std::string& msg, bool forceMsgBox);
+		friend void logInfo(const std::string& msg, bool forceMsgBox);
+		friend void logMessage(const std::string& msg, bool forceMsgBox);
         friend void logWarning(const std::string& msg, bool forceMsgBox);
         friend void logError(const std::string& msg, bool forceMsgBox);
         friend void logErrorAndExit(const std::string& msg, bool forceMsgBox);
@@ -90,7 +92,8 @@ namespace Falcor
         static Level sVerbosity;
     };
 
-    inline void logInfo(const std::string& msg, bool forceMsgBox = false) { Logger::log(Logger::Level::Info, msg, forceMsgBox); }
+	inline void logInfo(const std::string& msg, bool forceMsgBox = false) { Logger::log(Logger::Level::Info, msg, forceMsgBox); }
+	inline void logMessage(const std::string& msg, bool forceMsgBox = false) { Logger::log(Logger::Level::Message, msg, forceMsgBox); }
     inline void logWarning(const std::string& msg, bool forceMsgBox = false) { Logger::log(Logger::Level::Warning, msg, forceMsgBox); }
     inline void logError(const std::string& msg, bool forceMsgBox = false) { Logger::log(Logger::Level::Error, msg, forceMsgBox); }
     inline void logErrorAndExit(const std::string& msg, bool forceMsgBox = false) { Logger::log(Logger::Level::Error, msg + "\nTerminating...", forceMsgBox); exit(1); }
