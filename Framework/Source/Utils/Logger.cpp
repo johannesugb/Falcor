@@ -97,6 +97,7 @@ namespace Falcor
         switch(L)
         {
             create_level_case(Logger::Level::Info);
+            create_level_case(Logger::Level::Message);
             create_level_case(Logger::Level::Warning);
             create_level_case(Logger::Level::Error);
         default:
