@@ -565,6 +565,12 @@
       <Filter>Graphics\RenderGraph</Filter>
     </ClCompile>
     <ClCompile Include="Utils\Scripting\ScriptBindings.cpp" />
+    <ClCompile Include="..\Externals\fmt\src\format.cc">
+      <Filter>Externals\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Externals\fmt\src\posix.cc">
+      <Filter>Externals\fmt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\Model\Animation.h">
@@ -2324,6 +2330,9 @@
     </Filter>
     <Filter Include="Externals\GLM\simd">
       <UniqueIdentifier>{06fa6d05-49c9-43d3-8741-a6f1b441a43a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Externals\fmt">
+      <UniqueIdentifier>{c0a6f244-398d-4eb3-ba48-3688aae4d2f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
