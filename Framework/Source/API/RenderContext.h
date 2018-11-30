@@ -260,7 +260,7 @@ namespace Falcor
     };
 
     dlldecl BlitData gBlitData;
-#endif
     dlldecl CommandSignatureHandle gpDrawCommandSig;
     dlldecl CommandSignatureHandle gpDrawIndexCommandSig;
+#endif
 }
