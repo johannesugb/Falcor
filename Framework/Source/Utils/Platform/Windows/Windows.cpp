@@ -482,7 +482,7 @@ namespace Falcor
             FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
                 NULL, dwError, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPTSTR)&lpMsgBuf, 0, NULL);
             std::wstring err((LPTSTR)lpMsgBuf);
-            logWarning("setThreadAffinity failed with error: " + std::string(err.begin(), err.end()));
+            logWarning("setThreadAffinity failed with error: " + std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(err));
             LocalFree(lpMsgBuf);
         }
     }
@@ -504,7 +504,7 @@ namespace Falcor
             FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
                 NULL, dwError, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPTSTR)&lpMsgBuf, 0, NULL);
             std::wstring err((LPTSTR)lpMsgBuf);
-            logWarning("setThreadPriority failed with error: " + std::string(err.begin(), err.end()));
+            logWarning("setThreadPriority failed with error: " + std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(err));
             LocalFree(lpMsgBuf);
         }
     }
